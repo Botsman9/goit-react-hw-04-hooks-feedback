@@ -1,20 +1,23 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const FeedbackOptions = ({ options, onLeaveFeedback }) => {
+const FeedbackOptions = ({ onLeaveFeedback }) => {
   return (
     <>
-      {options.map((option) => (
-        <button type="button" name={option} onClick={onLeaveFeedback}>
-          {option}
-        </button>
-      ))}
+      <button type="button" name="good" onClick={onLeaveFeedback}>
+        Good
+      </button>
+      <button type="button" name="neutral" onClick={onLeaveFeedback}>
+        Neutral
+      </button>
+      <button type="button" name="bad" onClick={onLeaveFeedback}>
+        Bad
+      </button>
     </>
   );
 };
 
 FeedbackOptions.propTypes = {
-  options: PropTypes.array.isRequired,
   onLeaveFeedback: PropTypes.func.isRequired,
 };
 
